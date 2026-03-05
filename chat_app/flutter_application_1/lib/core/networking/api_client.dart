@@ -3,8 +3,11 @@ import 'package:dio/dio.dart';
 /// Central HTTP client built on Dio for all API requests.
 /// Configure base URL, timeouts, and interceptors in one place.
 class DioApiClient {
+  static const String _defaultBaseUrl =
+      'https://generativelanguage.googleapis.com/v1beta/models';
+
   DioApiClient({
-    required String baseUrl,
+    String baseUrl = _defaultBaseUrl,
     Duration? connectTimeout,
     Duration? receiveTimeout,
     Duration? sendTimeout,

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/chat/data/repos/gemenai_chat_repo_impl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/di.dart';
 import '../../data/models/chat_message_model.dart';
-import '../../data/services/gemenai_chat_service.dart';
 import '../cubits/chat_cubit/chat_cubit.dart';
 import '../widgets/chat_app_bar_widget.dart';
 import '../widgets/chat_input_bar_widget.dart';
@@ -38,9 +37,7 @@ class _ChatScreenWidgetState extends State<ChatScreenWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SendMessageCubit(
-        chatRepo: GemenaiChatRepoImpl(gemenaiChatService: GemenaiChatService()),
-      ),
+      create: (context) => getIt<SendMessageCubit>(),
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: const ChatAppBarWidget(),

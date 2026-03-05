@@ -4,9 +4,10 @@ import 'package:flutter_application_1/features/chat/data/models/chat_message_mod
 import '../../../../core/networking/api_client.dart';
 
 class GemenaiChatService {
-  final DioApiClient _apiClient = DioApiClient(
-    baseUrl: 'https://generativelanguage.googleapis.com/v1beta/models',
-  );
+  final DioApiClient _apiClient;
+
+  GemenaiChatService({required DioApiClient apiClient})
+    : _apiClient = apiClient;
 
   Future<ChatMessageModel> sendMessage({
     required List<ChatMessageModel> messages,
