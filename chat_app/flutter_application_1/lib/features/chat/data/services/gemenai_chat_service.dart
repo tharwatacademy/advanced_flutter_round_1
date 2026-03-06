@@ -12,17 +12,26 @@ class GemenaiChatService {
   Future<ChatMessageModel> sendMessage({
     required List<ChatMessageModel> messages,
   }) async {
-    final response = await _apiClient.post(
-      '/gemini-3-flash-preview:generateContent',
-      data: {"contents": messages.map((message) => message.toJson()).toList()},
-      options: Options(
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": "AIzaSyDfx1eQfZUQyxVBZUBmZkqyb-_OKSo2hWo",
-        },
-      ),
-    );
-
-    return ChatMessageModel.fromJson(response['candidates'][0]['content']);
+    var exception;
+    for (int i = 0; i < 3; i++) {
+      try {
+        var response = await _apiClient.post(
+          '/gemini-3-flash-preview:generateContent',
+          data: {
+            "contents": messages.map((message) => message.toJson()).toList(),
+          },
+          options: Options(
+            headers: {
+              "Content-Type": "application/json",
+              "x-goog-api-key": "AIzaSyDfx1eQfZUQyxVBZUBmZkqyb-_OKSo2hWo",
+            },
+          ),
+        );
+        return ChatMessageModel.fromJson(response['candidates'][0]['content']);
+      } catch (e) {
+        exception = e;
+      }
+    }
+    throw exception;
   }
 }
