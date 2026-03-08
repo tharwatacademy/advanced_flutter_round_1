@@ -56,6 +56,7 @@ class ChatInputBarWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: TextField(
+                  key: const Key('chat_input_bar_widget_text_field'),
                   controller: controller,
                   enabled: enabled,
                   maxLines: 4,
