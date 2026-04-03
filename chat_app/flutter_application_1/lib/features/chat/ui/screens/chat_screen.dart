@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/di.dart';
+import '../../../auth/ui/cubits/auth_cubit/auth_cubit.dart';
 import '../../data/models/chat_message_model.dart';
 import '../cubits/chat_cubit/chat_cubit.dart';
 import '../widgets/chat_app_bar_widget.dart';
@@ -40,7 +41,9 @@ class _ChatScreenWidgetState extends State<ChatScreenWidget> {
       create: (context) => getIt<SendMessageCubit>(),
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: const ChatAppBarWidget(),
+        appBar: ChatAppBarWidget(
+          onSignOut: () => context.read<AuthCubit>().signOut(),
+        ),
         body: Column(
           children: [
             Expanded(

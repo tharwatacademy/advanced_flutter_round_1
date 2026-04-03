@@ -12,7 +12,7 @@ class GemenaiChatService {
   Future<ChatMessageModel> sendMessage({
     required List<ChatMessageModel> messages,
   }) async {
-    var exception;
+    dynamic exception;
     for (int i = 0; i < 3; i++) {
       try {
         var response = await _apiClient.post(

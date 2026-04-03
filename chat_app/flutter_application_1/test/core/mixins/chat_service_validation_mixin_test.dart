@@ -1,10 +1,7 @@
 import 'package:flutter_application_1/core/mixins/chat_service_validation_mixin.dart';
 import 'package:flutter_application_1/features/chat/data/models/chat_message_model.dart';
 import 'package:flutter_application_1/features/chat/data/models/chat_message_part_model.dart';
-import 'package:flutter_application_1/features/chat/data/repos/gemenai_chat_repo_impl.dart';
-import 'package:flutter_application_1/features/chat/data/services/gemenai_chat_service.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 
 class ChatServiceValidationMixinMock with ChatServiceValidationMixin {}
 

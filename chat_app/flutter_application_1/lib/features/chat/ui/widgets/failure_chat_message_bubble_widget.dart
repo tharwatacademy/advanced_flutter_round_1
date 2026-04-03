@@ -31,10 +31,13 @@ class FailureChatMessageBubbleWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: _bubbleColor,
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: _errorColor.withOpacity(0.9), width: 2),
+            border: Border.all(
+              color: _errorColor.withValues(alpha: 0.9),
+              width: 2,
+            ),
             boxShadow: [
               BoxShadow(
-                color: _errorColor.withOpacity(0.08),
+                color: _errorColor.withValues(alpha: 0.08),
                 blurRadius: 6,
                 offset: const Offset(0, 1),
               ),
@@ -88,7 +91,7 @@ class FailureChatMessageBubbleWidget extends StatelessWidget {
                     onPressed: onResend,
                     style: TextButton.styleFrom(
                       foregroundColor: _errorColor,
-                      backgroundColor: _errorColor.withOpacity(0.13),
+                      backgroundColor: _errorColor.withValues(alpha: 0.13),
                       minimumSize: const Size(20, 34),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 10,
@@ -98,7 +101,9 @@ class FailureChatMessageBubbleWidget extends StatelessWidget {
                       visualDensity: VisualDensity.compact,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
-                        side: BorderSide(color: _errorColor.withOpacity(0.3)),
+                        side: BorderSide(
+                          color: _errorColor.withValues(alpha: 0.3),
+                        ),
                       ),
                     ),
                     icon: const Icon(Icons.refresh, size: 18),

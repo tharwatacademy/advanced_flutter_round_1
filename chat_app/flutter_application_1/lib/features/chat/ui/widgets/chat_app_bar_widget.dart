@@ -8,11 +8,13 @@ class ChatAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.onBackPressed,
     this.onSpeakerPressed,
     this.onUploadPressed,
+    this.onSignOut,
   });
 
   final VoidCallback? onBackPressed;
   final VoidCallback? onSpeakerPressed;
   final VoidCallback? onUploadPressed;
+  final VoidCallback? onSignOut;
 
   static const double _height = 56;
 
@@ -97,6 +99,14 @@ class ChatAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           color: Colors.black54,
           iconSize: 24,
         ),
+        if (onSignOut != null)
+          IconButton(
+            onPressed: onSignOut,
+            icon: const Icon(Icons.logout_outlined),
+            color: Colors.black54,
+            iconSize: 24,
+            tooltip: 'Sign out',
+          ),
         const SizedBox(width: 8),
       ],
     );

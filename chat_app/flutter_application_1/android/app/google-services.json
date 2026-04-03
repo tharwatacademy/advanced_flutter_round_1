@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "663558582354",
+    "project_id": "chat-ai-bot-67369",
+    "storage_bucket": "chat-ai-bot-67369.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663558582354:android:44420123b37b9de610af8b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPQIefSi24iWnH2F9MgXDeiGmo8_Jt4L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663558582354:android:44420123b37b9de610af8b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPQIefSi24iWnH2F9MgXDeiGmo8_Jt4L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663558582354:android:44420123b37b9de610af8b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1.stg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPQIefSi24iWnH2F9MgXDeiGmo8_Jt4L0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
